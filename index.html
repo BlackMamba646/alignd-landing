@@ -5,6 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
   <title>Align'd Wellness — Coming Soon</title>
   <meta name="description" content="Track your cycle, log how you feel, and receive wellness insights made for your body's rhythm. Join the waitlist.">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Hanken+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -137,44 +140,36 @@
     /* ── Brand Mark ── */
     .brand {
       margin-top: 56px;
-      font-family: var(--font-body);
-      font-size: 12px;
-      font-weight: 600;
-      letter-spacing: 0.35em;
-      color: var(--accent);
-      text-transform: uppercase;
+      font-family: var(--font-display);
+      font-size: 42px;
+      font-weight: 500;
+      letter-spacing: 0.06em;
+      color: var(--dark);
       opacity: 0;
       animation: fade-up 0.8s ease-out 0.2s forwards;
     }
 
-    /* ── Coming Soon Badge ── */
-    .badge {
-      margin-top: 24px;
-      display: inline-flex;
+    /* ── Coming Soon Lockup ── */
+    .launch-status {
+      margin-top: 22px;
+      display: flex;
       align-items: center;
-      gap: 8px;
-      padding: 8px 20px;
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: 24px;
-      font-family: var(--font-body);
-      font-size: 13px;
-      font-weight: 600;
-      color: var(--primary-dark);
-      box-shadow: 0 4px 14px rgba(58, 58, 58, 0.04);
+      gap: 18px;
       opacity: 0;
       animation: fade-up 0.8s ease-out 0.35s forwards;
     }
-    .badge .dot {
-      width: 8px;
-      height: 8px;
-      border-radius: 50%;
+    .launch-status .divider-line {
+      width: 40px;
+      height: 1px;
       background: var(--primary);
-      animation: pulse-dot 2s ease-in-out infinite;
     }
-    @keyframes pulse-dot {
-      0%, 100% { opacity: 1; transform: scale(1); }
-      50% { opacity: 0.5; transform: scale(0.85); }
+    .launch-status .status-text {
+      font-family: var(--font-body);
+      font-size: 15px;
+      font-weight: 600;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--primary-dark);
     }
 
     /* ── Hero ── */
@@ -464,8 +459,10 @@
 
     /* ── Responsive ── */
     @media (max-width: 600px) {
-      .brand { margin-top: 36px; font-size: 11px; }
-      .badge { margin-top: 16px; padding: 7px 16px; font-size: 12px; }
+      .brand { margin-top: 36px; font-size: 32px; }
+      .launch-status { margin-top: 16px; gap: 14px; }
+      .launch-status .divider-line { width: 28px; }
+      .launch-status .status-text { font-size: 13px; letter-spacing: 0.18em; }
       .hero { margin-top: 28px; }
       .hero h1 { font-size: 46px; }
       .hero .description { font-size: 14px; max-width: 300px; margin-top: 16px; }
@@ -527,12 +524,13 @@
     <div class="content">
 
       <!-- Brand Mark -->
-      <div class="brand">Align'd Wellness</div>
+      <div class="brand">Align'd</div>
 
-      <!-- Coming Soon Badge -->
-      <div class="badge">
-        <span class="dot"></span>
-        Coming Soon
+      <!-- Coming Soon -->
+      <div class="launch-status">
+        <span class="divider-line"></span>
+        <span class="status-text">Launching Soon</span>
+        <span class="divider-line"></span>
       </div>
 
       <!-- Hero -->
