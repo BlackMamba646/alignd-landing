@@ -20,9 +20,6 @@ create policy "Allow anonymous waitlist signups"
   to anon
   with check (true);
 
--- Allow authenticated reads (for admin)
-create policy "Allow authenticated reads"
-  on public.waitlist
-  for select
-  to authenticated
-  using (true);
+-- No read policy on purpose: the app's users share this Supabase project, so
+-- a read policy would expose every sign-up. View the list in the dashboard
+-- (Table Editor / SQL Editor), which bypasses row-level security.
